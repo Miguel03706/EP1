@@ -112,6 +112,7 @@ int somaIntervalo(int inicio, int fim)
 int somaInteiros(int inicio, int limite)
 {
 	int soma = 0;
+	// int somaFinal = inicio;  //n sei se pode add outras variaveis
 
 	/* COMPLETE A IMPLEMENTACAO DA FUNCAO*/
 
@@ -121,11 +122,31 @@ int somaInteiros(int inicio, int limite)
 	}
 	else
 	{
-		/* A funcao devera retornar o maior valor da soma dos inteiros
-	consecutivos a partir de inicio, desde que esse valor seja menor ou igual
-	ao valor de limite.*/
+		/*
+			A funcao devera retornar o maior valor da soma dos inteiros
+			consecutivos a partir de inicio, desde que esse valor seja menor ou igual
+			ao valor de limite.
+		*/
 
-	
+		// enquanto soma for menor q limite => ADD +1
+		// for (int i = inicio + 1; soma <= limite; i++)
+		// {
+		// 	soma += i; // add +1 na soma
+		// 	// quando soma for <= limite e soma > soma final
+		// 	// soma final existe pq quando soma > "valor ideal" ele n add mais
+		// 	if (soma > somaFinal && soma <= limite)
+		// 	{
+		// 		somaFinal = soma;
+		// 	}
+		// }
+		soma = inicio;
+
+		for (int i = inicio + 1; soma <= limite; i++)
+		{
+			soma += i;
+			if (soma > limite)
+				return soma - i;
+		}
 	}
 
 	return soma;
@@ -152,6 +173,8 @@ double dividindoPorDois(double valor, int divisoes)
 	double resultado = 0;
 
 	/* COMPLETE A IMPLEMENTACAO DA FUNCAO*/
+
+	/* TODO: */
 
 	return resultado;
 }
