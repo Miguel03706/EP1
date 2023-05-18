@@ -122,11 +122,7 @@ int somaInteiros(int inicio, int limite)
 	}
 	else
 	{
-		/*
-			A funcao devera retornar o maior valor da soma dos inteiros
-			consecutivos a partir de inicio, desde que esse valor seja menor ou igual
-			ao valor de limite.
-		*/
+		/* n sabia se poderia criar/usar outras variáveis, então refiz a função */
 
 		// enquanto soma for menor q limite => ADD +1
 		// for (int i = inicio + 1; soma <= limite; i++)
@@ -174,7 +170,20 @@ double dividindoPorDois(double valor, int divisoes)
 
 	/* COMPLETE A IMPLEMENTACAO DA FUNCAO*/
 
-	/* TODO: */
+	if ((divisoes <= 0))
+	{
+		return -1;
+	}
+	else
+	{
+		// FIXME:
+		int expoente = 1; // não consegui resolver esse problema sem criar essa var
+		for (int i = divisoes; i != 0; i--)
+		{
+			expoente *= 2;
+		}
+		resultado += valor / expoente;
+	}
 
 	return resultado;
 }
@@ -200,11 +209,14 @@ double dividindoPorDois(double valor, int divisoes)
 
   A funcao calculoDoValorDePI recebe como parametro o numero de iteracoes
 	que serao realizadas para o calculo do valor aproximado de pi.
+
   Porem, neste exercicio voce deve implementar uma nova funcao:
+
 	double valorDePI(double limiar), baseada na ideia da funcao acima, porem
 	que, ao inves de executar um numero de iteracoes passado como parametro,
 	ira receber como parametro um limiar de precisao que dira quando sua funcao
 	devera parar de calcular a aproximacao, de acordo com a seguinte logica:
+
 	a cada iteracao, voce devera comparar o valor atual de pi com o valor
 	anterior (valor da iteracao anterior), enquanto essa diferenca
 	(em valor absoluto [isto e, sem sinal]) for maior do que o valor de limiar,
@@ -225,16 +237,33 @@ double valorDePI(double limiar)
 {
 	double resultado = 0;
 
+	double meuPI = 4; // valor inicial de pi ("primeira iteracao")
+	int sinal = -1;
+	double divisor = 3;
+	for (int i = 2; i <= limiar; i++)
+	{
+		// comparar valor atual de pi com valor anterior >= limiar -> retorna valor atual pi
+		if(){}
+		meuPI += sinal * 4.0 / divisor; // atualiza o valor de pi
+		divisor += 2;					// incrementa o valor do divisor
+		sinal *= -1;					// inverte o sinal da variavel sinal
+	}
+
 	/* COMPLETE A IMPLEMENTACAO DA FUNCAO*/
+
+	if (limiar <= 0, 000001)
+	{
+		return -1
+	}
+	else
+	{
+	}
+
+	/* TODO: */
 
 	return resultado;
 }
 
-/*
-	Funcao main criada apenas para seus testes.
-	Voce pode adicionar novos testes se quiser.
-	ESTA FUNCAO SERA IGNORADA NA CORRECAO
-*/
 int main()
 {
 
