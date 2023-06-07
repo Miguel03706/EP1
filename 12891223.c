@@ -71,17 +71,15 @@ int somaIntervalo(int inicio, int fim)
 {
 	int resultado = 0;
 
-	/* COMPLETE A IMPLEMENTACAO DA FUNCAO*/
-
-	if (inicio <= 0 || fim <= 0 || fim < inicio)
+	if (inicio <= 0 || fim <= 0 || fim < inicio) // realiza as verificações
 	{
-		return -1;
+		return -1; // se der errado, retorna -1
 	}
 	else
 	{
 		for (int i = inicio; i <= fim; i++)
 		{
-			resultado += i;
+			resultado += i; // incrementa no resultado
 		}
 	}
 
@@ -113,8 +111,6 @@ int somaInteiros(int inicio, int limite)
 {
 	int soma = 0;
 	// int somaFinal = inicio;  //n sei se pode add outras variaveis
-
-	/* COMPLETE A IMPLEMENTACAO DA FUNCAO*/
 
 	if (inicio <= 0 || limite <= 0 || limite < inicio)
 	{
@@ -167,8 +163,6 @@ int somaInteiros(int inicio, int limite)
 double dividindoPorDois(double valor, int divisoes)
 {
 	double resultado = 0;
-
-	/* COMPLETE A IMPLEMENTACAO DA FUNCAO*/
 
 	if ((divisoes <= 0))
 	{
@@ -237,31 +231,38 @@ double valorDePI(double limiar)
 {
 	double resultado = 0;
 
-	double meuPI = 4; // valor inicial de pi ("primeira iteracao")
 	int sinal = -1;
 	double divisor = 3;
-	for (int i = 2; i <= limiar; i++)
-	{
-		// comparar valor atual de pi com valor anterior >= limiar -> retorna valor atual pi
-		if(){}
-		meuPI += sinal * 4.0 / divisor; // atualiza o valor de pi
-		divisor += 2;					// incrementa o valor do divisor
-		sinal *= -1;					// inverte o sinal da variavel sinal
-	}
+	double meuPI = 4;	   // valor inicial de pi ("primeira iteracao")
+	double novoPI = meuPI; // valor posterior de pi ("primeira iteracao")
 
-	/* COMPLETE A IMPLEMENTACAO DA FUNCAO*/
-
-	if (limiar <= 0, 000001)
+	if (limiar <= 0.000001)
 	{
-		return -1
+		return -1;
 	}
 	else
 	{
+
+		do
+		{
+			meuPI += sinal * 4.0 / divisor;
+			divisor += 2;
+			sinal *= -1;
+
+			double moduloDif = meuPI - novoPI;
+			if (moduloDif < 0)
+			{
+				moduloDif = moduloDif * -1; // se o sinal for negativo, inverte ele
+			}
+			novoPI = meuPI;
+
+			if (moduloDif <= limiar)
+			{
+				return meuPI;
+			}
+
+		} while (1); // enquanto for verdadeiro
 	}
-
-	/* TODO: */
-
-	return resultado;
 }
 
 int main()
